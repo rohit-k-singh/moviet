@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Avenir&display=swap');
+*{
+    margin: 0%;
+    padding: 0%;
+    background-color: #262946;
+}
+.container{
+    background-color: #10151B;
+}
+.titlename{
+    text-align: center;
+    color: #FFFFFF;
+    font-family: lato;
+}
