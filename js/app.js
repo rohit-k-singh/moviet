@@ -1,15 +1,16 @@
 var card = document.getElementById("cardbox");
 var searchVal;
 var first = "";
-
+var url = `https://api.themoviedb.org/3/discover/movie?api_key=9ca321e0477eb3e89ec7f2b59812c219&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`;
+document.getElementById("dataTitle").innerHTML = "Popular Movies";
+fetchit(url);
 function func() {
   searchVal = document.getElementById('search').value;
   console.log(searchVal);
-  fetchit(searchVal)
+   url = `https://api.themoviedb.org/3/search/movie?api_key=9ca321e0477eb3e89ec7f2b59812c219&language=en-US&query=${searchVal}`;
+  fetchit(url)
 }
-function fetchit(value) {
-  // var url = `https://api.themoviedb.org/3/discover/movie?api_key=9ca321e0477eb3e89ec7f2b59812c219&language=en-US&sort_by=release_date.dasc&include_adult=false&include_video=false&page=1`;
-  var url = `https://api.themoviedb.org/3/search/movie?api_key=9ca321e0477eb3e89ec7f2b59812c219&language=en-US&query=${searchVal}`;
+function fetchit(url) {
   fetch(url)
     .then((resp) => resp.json()) // Transform the data into json
     .then(function (data) {

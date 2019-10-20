@@ -146,12 +146,14 @@ button:hover{
     max-height: 330px;
 }
 #filter{
-    float: right;
     margin-right: 60px;
     margin-top: 60px;
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 .dropdown{
+    float: right;
     padding: 6px;
     width: 170px;
     font-size: inherit;
