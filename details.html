@@ -5,21 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Moviet Details</title>
-    <link rel="stylesheet" href="styles/main.css">
+    
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/details.css">
 </head>
-<body>
+<body onload="onload()">
         <header>
                 <a href="./index.html" class="logo">Moviet</a>
                 <nav>
                     <ul class="navlink">
                         <li><a href="#" class="titlename">Movies</a></li>
                         <li><a href="#" class="titlename">TV Series</a></li>
-                        <li><a href="./details.html" class="titlename">About</a></li>
                     </ul>
                 </nav>
                 <button> Search</button>
             </header>
-            <script src="./js/app.js"></script>
-            <script src="./js/details.js"></script>
+            <div class="container">
+                <div class="img" id="im"></div>
+                <div class="data"></div>
+            </div>
+            <script src="/js/details.js"></script>
 </body>
 </html>
