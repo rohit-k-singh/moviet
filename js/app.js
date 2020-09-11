@@ -1,19 +1,18 @@
-var card = document.getElementById("xx");
+var card = document.getElementById("content");
 var searchVal;
 var first = "";
 var url = `https://api.themoviedb.org/3/discover/movie?api_key=9ca321e0477eb3e89ec7f2b59812c219&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`;
+
 document.getElementById("dataTitle").innerHTML = "Popular Movies";
 fetchit(url);
+
 function func() {
   searchVal = document.getElementById('searchterm').value;
   console.log(searchVal);
    url = `https://api.themoviedb.org/3/search/movie?api_key=9ca321e0477eb3e89ec7f2b59812c219&query=${searchVal}`;
-  fetchit(url)
+  fetchit(url);
 }
-function tvpage(){
-  url = `https://api.themoviedb.org/3/discover/tv?api_key=9ca321e0477eb3e89ec7f2b59812c219&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false`;
-  fetchit(url)
-}
+
 function fetchit(url) {
   fetch(url)
     .then((resp) => resp.json()) // Transform the data into json
@@ -32,8 +31,8 @@ function createCard(first) {
         `<div class="containerr" style="background-image:url(${url});">
         <div class="overlay"><div class = "items title">${element.title}</div>
         <div class = "items head"><p>${summary}</p></div>
-        <div class = "items price"><p class="new">Rating:${element.vote_average}\/10</p>
-        </div><div class="items cart"><i class="fa fa-shopping-cart"></i><div>${element.release_date}</div>
+        <div class = "items votes"><p class="new">Rating:${element.vote_average}\/10</p>
+        </div><div class="items redate"><div>${element.release_date}</div>
         <button class="cardbtn"><a href="details.html?userId=${element.id}">View More</a></button></div>
           </div>
         </div>`;

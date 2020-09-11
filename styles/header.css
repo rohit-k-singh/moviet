@@ -5,21 +5,18 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    justify-content: center;
-    align-items: center;
 }
 body {
     background-color: #25273E;
+    position: relative;
 }
-
-li,
-a,
-button {
-    font-family: 'Varela Round', sans-serif;
+li , a , button {
+    font-family: 'Varela Round','poppins' sans-serif;
     font-weight: 500;
     font-size: 16px;
     color: #f5f5f5;
     text-decoration: none;
+    text-transform: uppercase;
 }
 
 #search {
@@ -34,10 +31,10 @@ button {
 #searchdiv {
     padding: px;
 }
-
-header {
+.header {
     display: flex;
     flex-wrap: wrap;
+    overflow: hidden;
     justify-content: space-between;
     align-items: flex-start;
     padding: 15px 5%;
@@ -47,21 +44,19 @@ header {
     top: 0%;
     left: 0;
     width: 100vw;
+    height: 12vh;
     z-index: 999898;
-
-
 }
-
 .logo {
     cursor: pointer;
     color: #fff;
     font-size: 2em;
     transform: scale(1.5);
     height: 50px;
-
-
 }
-
+.menudrop{
+    display: none;
+}
 .navlink {
     list-style: none;
     font-size: 2em;
@@ -82,6 +77,29 @@ header {
     color: #FFC40A;
 }
 
+@media only screen and (max-width:776px){
+    ul.navlink{
+        display: none;
+    }
+    .menudrop{
+        display: inline-block;
+        padding: 6px;
+        width: 170px;
+        font-size: inherit;
+        color: bisque;
+        color: #c5d121;
+        background-color: #0D0F29;
+    }
+    
+    .menudrop > option {
+        padding: 30px;
+        width: 20px;
+    }
+}
+.searchbtn {
+    border-radius: 0%;
+    max-width: initial;
+}
 button {
     padding: 9px 25px;
     background-color: rgb(107, 168, 184);
@@ -96,32 +114,81 @@ button:hover {
 }
 
 
-
-#filter {
-    margin-right: 60px;
-    margin-top: 150px;
-    padding: 10px;
+.search-bar {
+    height: 44px;
+    width: 200px;
+    border-radius: 40px;
     display: flex;
-    justify-content: space-between;
-
+    align-items: center;
+    padding: 0 0 0 20px;
+    position: relative;
+    background: #fff;
 }
 
-.dropdown {
-    float: right;
-    padding: 6px;
-    width: 170px;
-    font-size: inherit;
-    color: bisque;
-    color: #c5d121;
-    background-color: #0D0F29;
+.input {
+    border: none;
+    height: 25px;
+    width: 150px;
+    color: #1b1b1b;
+    font-size: 15px;
+    outline: none;
 }
 
-.dropdown .drop-menu {
-    padding: 30px;
-    width: 20px;
+.input:not(:placeholder-shown)+.label {
+    font-size: 9px;
+    top: 3px;
+    color: #00c853;
 }
 
-.searchbtn {
-    border-radius: 0%;
-    max-width: initial;
+.input:focus~.label {
+    font-size: 9px;
+    top: 3px;
+    color: #4279a3;
+    transition: all 0.5s ease;
+}
+
+.label {
+    color: #aaaaaa;
+    position: absolute;
+    top: 13px;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.search-btn {
+    background: #25273E;
+    border-radius: 20px;
+    height: 40px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    justify-content: center;
+    cursor: pointer;
+    right: 2px;
+    position: absolute;
+    transition: all 1s ease;
+}
+
+.icon {
+    display: inline-flex;
+}
+
+.icon-18 {
+    width: 18px;
+    height: 18px;
+}
+
+.highlight {
+    width: 0px;
+    height: 1px;
+    background: #4279a3;
+    position: absolute;
+    bottom: 8px;
+    transition: all 1s ease;
+}
+
+.input:focus~.highlight {
+    width: 150px;
+    transition: all 1s ease;
 }

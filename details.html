@@ -5,25 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Moviet Details</title>
-    
-    <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/details.css">
 </head>
 <body onload="onload()">
-        <header>
-                <a href="./index.html" class="logo">Moviet</a>
-                <nav>
-                    <ul class="navlink">
-                        <li><a href="#" class="titlename">Movies</a></li>
-                        <li><a href="#" class="titlename">TV Series</a></li>
-                    </ul>
-                </nav>
-                <button> Search</button>
-            </header>
-            <div class="container">
-                <div class="img" id="im"></div>
-                <div class="data"></div>
+    <header class="header">
+        <a href="index.html" class="logo"><img src="./logo1.png" height=90%></a>
+        <nav>
+            <ul class="navlink">
+                <li><a href="index.html" class="titlename" >Popular Movies</a></li>
+                <li><a href="#" class="titlename" >All Movies</a></li>
+            </ul>
+            <select class="menudrop">
+                <option><a href="index.html" class="titlename" >Popular Movies</a> </option>
+                <option><a href="#" class="titlename" >All Movies</a></option>
+            </select>
+        </nav>
+        <div id="searchdiv">
+                    <svg style="display: none">
+                            <symbol id="magnify" viewBox="0 0 18 18" height="100%" width="100%">
+                              <path d="M12.5 11h-.8l-.3-.3c1-1.1 1.6-2.6 1.6-4.2C13 2.9 10.1 0          6.5 0S0 2.9 0 6.5 2.9 13 6.5 13c1.6 0 3.1-.6 4.2-1.6l.3.3v.8l5 5          1.5-1.5-5-5zm-6 0C4 11 2 9 2 6.5S4 2 6.5 2 11 4 11 6.5 9 11 6.5            11z" fill="#fff" fill-rule="evenodd"/>
+                            </symbol>
+                          </svg>
+                <div class="search-bar">
+            <input type="text" class="input" name="inputText" id="searchterm" placeholder="Search">
+            <span class="highlight"></span>
+            <button class="search-btn" onclick="func()">
+                <svg class="icon icon-18">
+                    <use xlink:href="#magnify"></use>
+                    </svg>
+            </button>
             </div>
-            <script src="/js/details.js"></script>
+        </div>
+    </header>
+    <div id="container">
+        <div id="img"></div>
+        <div id="overview">
+            <div id="title"></div>
+            <p id="summary"></p>
+        </div>
+        <div id="otherInfo">
+            
+        </div>
+    </div>
+    <script src="/js/details.js"></script>
 </body>
 </html>
