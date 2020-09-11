@@ -1,5 +1,5 @@
 let idname ;
-window.onload = function () {
+function fetchData() {
     let url = document.location.href;
         params = url.split('?')[1];
          tmp = params.split('=');
