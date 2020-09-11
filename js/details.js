@@ -1,5 +1,5 @@
 let idname ;
-let onload = function () {
+window.onload = function () {
     let url = document.location.href;
         params = url.split('?')[1];
          tmp = params.split('=');
