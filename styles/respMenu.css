@@ -1,0 +1,78 @@
+*
+{
+    padding:0;
+    margin:0;
+}
+nav{
+    height:5em;
+    background-color: aquamarine;
+}
+nav h1{
+    position: absolute;
+    font-size:2em;
+    line-height:2em;
+    font-weight:bolder;
+    float:left;
+    margin-left:.5em;
+    display: block;
+}
+nav ul{
+float:right;
+margin-right:.5em;
+list-style:none;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 2em;
+    font-size: 2em;
+    padding-right:.5em;
+}
+
+#resmenu{
+    float:right;
+    margin-right: .5em;
+    line-height: 2em;
+    font-size: 2em;
+    display:none; 
+}
+
+label #barsicon,
+label #timesicon{
+    line-height: 2em;
+    font-size: 2em;
+    float: right;
+    margin-right: .5em;
+    display:none;
+}
+
+@media screen and (max-width:320px){
+    label #barsicon
+    {
+        display: block;
+    } 
+
+    nav ul{
+    margin-top:5em;
+    position: fixed;
+    text-align:center;
+    left:-110%;
+    background-color: bisque;
+    }
+    
+    nav ul li{
+    display:block;
+    width:100vw;
+    }
+   
+    #resmenu:checked ~ul{
+        left:0;
+    }
+
+    #resmenu:checked ~label #barsicon{
+        display:none;
+    }
+    #resmenu:checked ~label #timesicon{
+        display:block;
+    }
+
+}

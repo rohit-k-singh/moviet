@@ -27,14 +27,9 @@ li , a , button {
     color: #c5d121;
     background-color: #0D0F29;
 }
-
-#searchdiv {
-    padding: px;
-}
 .header {
     display: flex;
     flex-wrap: wrap;
-    overflow: hidden;
     justify-content: space-between;
     align-items: flex-start;
     padding: 15px 5%;
@@ -45,8 +40,9 @@ li , a , button {
     left: 0;
     width: 100vw;
     height: 12vh;
-    z-index: 999898;
+    z-index: 5;
 }
+
 .logo {
     cursor: pointer;
     color: #fff;
@@ -54,7 +50,7 @@ li , a , button {
     transform: scale(1.5);
     height: 50px;
 }
-.menudrop{
+/* .menudrop{
     display: none;
 }
 .navlink {
@@ -75,27 +71,8 @@ li , a , button {
 
 .navlink li a:hover {
     color: #FFC40A;
-}
+} */
 
-@media only screen and (max-width:776px){
-    ul.navlink{
-        display: none;
-    }
-    .menudrop{
-        display: inline-block;
-        padding: 6px;
-        width: 170px;
-        font-size: inherit;
-        color: bisque;
-        color: #c5d121;
-        background-color: #0D0F29;
-    }
-    
-    .menudrop > option {
-        padding: 30px;
-        width: 20px;
-    }
-}
 .searchbtn {
     border-radius: 0%;
     max-width: initial;
@@ -191,4 +168,102 @@ button:hover {
 .input:focus~.highlight {
     width: 150px;
     transition: all 1s ease;
+}
+
+
+/* nav{
+    height:5em;
+} */
+nav h1{
+    position: absolute;
+    font-size:2em;
+    line-height:2em;
+    font-weight:bolder;
+    float:left;
+    margin-left:1em;
+    display: block;
+}
+nav ul{
+float:right;
+margin-right:.5em;
+list-style:none;
+background-color:  #0D0F29;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 2em;
+    font-size: 2em;
+    padding-right:.5em;
+}
+
+#menu{
+    float:right;
+    margin-right: .5em;
+    line-height: 2em;
+    font-size: 2em;
+    display:none; 
+}
+
+
+#iconb,#icont{
+    display: none;
+    line-height: 2em;
+    font-size: 2em;
+    float: right;
+    margin-right: .5em;
+}
+@media screen and (max-width:630px){
+    label #iconb
+    {
+        display: block;
+    } 
+
+    nav>ul{
+    margin-top:3.7em;
+    position: fixed;
+    text-align:center;
+    left:-150%;
+    display: flex;
+    flex-direction: column;
+    }
+    nav>ul>li:last-child{
+        margin-left:165px ;
+    }
+    nav>ul>li{
+    display:block;
+    width:100vw;
+    }
+   
+    #menu:checked ~ul{
+        left:0;
+    }
+
+    #menu:checked ~label #iconb{
+        display:none;
+    }
+    #menu:checked ~label #icont{
+        display:block;
+    }
+
+}
+
+@media only screen and (min-width:630px){
+    nav{
+        margin-left: -30px;
+        width: 100vw;
+    }
+    nav>ul{
+        z-index: 10;
+        background: none;
+        margin-top: -50px;
+    }
+    nav>ul>li{
+        font-size: .7em;
+
+    }
+}
+@media only screen and (min-width:1000px){
+    nav>ul>li{
+        font-size: x-large;
+    }
 }
