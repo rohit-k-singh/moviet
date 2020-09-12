@@ -1,16 +1,20 @@
 let idname ;
-function fetchData() {
-    let url = document.location.href;
-        params = url.split('?')[1];
-         tmp = params.split('=');
-    idname =  tmp[1];
-    createURL(tmp[1]);
+// window.onload = onl;
+function onl(){
+  console.log('hello');
+  let url = document.location.href;
+      params = url.split('?')[1];
+       tmp = params.split('=');
+  idname =  tmp[1];
+  createURL(tmp[1]);
 }
+
 let createURL = (id)=>{
-   let url = `https://api.themoviedb.org/3/movie/${id}?api_key=9ca321e0477eb3e89ec7f2b59812c219&language=en-US`;
-  //  console.log(url);
-   fetchit(url);
+ let url = `https://api.themoviedb.org/3/movie/${id}?api_key=9ca321e0477eb3e89ec7f2b59812c219&language=en-US`;
+//  console.log(url);
+ fetchit(url);
 }
+
 let fetchit = (url) => {
     fetch(url)
       .then(resp => resp.json())
